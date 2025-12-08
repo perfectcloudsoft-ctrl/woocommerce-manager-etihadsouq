@@ -16,7 +16,13 @@ const AuthLayout = async ({
         >
             <div
                 className='w-full'
-            >Auth Layout</div>
+            >
+                <div
+                    className='flex items-center w-full h-full flex-col justify-center'
+                >
+                    {children}
+                </div>
+            </div>
             <div
                 className='w-full bg-theme-primary/10'
             >

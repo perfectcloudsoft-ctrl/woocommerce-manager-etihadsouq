@@ -1,3 +1,4 @@
+import EmailLoginForm from '@/components/elements/auth/email-login-form'
 import AuthLayout from '@/layouts/auth'
 import Link from 'next/link'
 
@@ -17,7 +18,9 @@ const EmailSigninPage = async () => {
                     >&nbsp;Reset</Link>
                 </p>
             }
-        ></AuthLayout>
+        >
+            <EmailLoginForm/>
+        </AuthLayout>
     )
 }
 
