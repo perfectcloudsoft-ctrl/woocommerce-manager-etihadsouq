@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto_Flex } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Order Manager & more",
 };
 
-const roboto = Roboto_Flex();
+const dm_sans = DM_Sans();
 
 export default function RootLayout({
   children,
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} antialiased`}
+        className={`${dm_sans.className} antialiased`}
       >
         {children}
       </body>
