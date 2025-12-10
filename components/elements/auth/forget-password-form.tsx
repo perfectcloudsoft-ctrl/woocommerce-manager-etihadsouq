@@ -23,16 +23,18 @@ const ForgetPasswordForm = () => {
     ])
 
     useEffect(() => {
-        setFieldsData(prev => {
-            const update: InputGroupType[] = prev.map((item) => {
-                return ({
-                    ...item,
-                    value: email,
+        (() => {
+            setFieldsData(prev => {
+                const update: InputGroupType[] = prev.map((item) => {
+                    return ({
+                        ...item,
+                        value: email,
+                    })
                 })
-            })
 
-            return update;
-        })
+                return update;
+            })
+        })()
     }, [email])
 
     return (

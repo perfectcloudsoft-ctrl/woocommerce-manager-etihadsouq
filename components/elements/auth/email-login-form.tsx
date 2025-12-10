@@ -45,13 +45,15 @@ const EmailLoginForm = () => {
   }
 
   useEffect(() => {
-    setFieldsData(prev => {
-      const updates: InputGroupType[] = prev.map((item) => ({
-        ...item,
-        value: formData[item.name as keyof typeof formData] || '',
-      }))
-      return updates;
-    })
+    (() => {
+      setFieldsData(prev => {
+        const updates: InputGroupType[] = prev.map((item) => ({
+          ...item,
+          value: formData[item.name as keyof typeof formData] || '',
+        }))
+        return updates;
+      })
+    })()
   }, [formData])
 
   return (
@@ -72,7 +74,7 @@ const EmailLoginForm = () => {
           inprogress: "Please wait",
           normal: "SignIn",
         }}
-        onSubmit={async (event) => {
+        onSubmit={async () => {
           await new Promise(resolve => setTimeout(resolve, 5000));
         }}
         setFieldsData={setFieldsData}
