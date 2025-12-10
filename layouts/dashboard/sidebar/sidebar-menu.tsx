@@ -73,8 +73,19 @@ function SubmenuItemTemplate({ menu }: {
     menu: DashboardSidebarMenuItemInterface,
 }) {
 
+    const pathname = usePathname();
+
     const menuWrapperRef = useRef<HTMLDivElement>(null);
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isOpen, setIsOpen] = useState<boolean>(() => {
+        let currentMenuActive = false;
+        for (const submenu of menu.submenu || []) {
+            if (submenu.url === pathname) {
+                currentMenuActive = true;
+            }
+        }
+
+        return currentMenuActive;
+    });
 
     return (
         <>
@@ -104,16 +115,16 @@ function SubmenuItemTemplate({ menu }: {
                             y: 20,
                             opacity: 0,
                         }}
-                        className='pl-4'
+                        className='pl-4 ml-5 border-l border-foreground/20'
                     >
                         <div
-                            className='min-h-max py-3 px-4 rounded-lg hover:bg-background-secondary'
+                            className='min-h-max'
                         >
                             {menu.submenu?.map((submenu, index) => (
                                 <Link
                                     key={index}
                                     href={submenu.url}
-                                    className='block text-sm'
+                                    className={'block text-sm py-3 px-4 rounded-lg hover:bg-background-secondary' + ` ${pathname === submenu.url ? "bg-background-secondary" : ""}`}
                                 >
                                     {submenu.label}
                                 </Link>
