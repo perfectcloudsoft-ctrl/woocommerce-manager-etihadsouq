@@ -1,5 +1,6 @@
 import { AxiosError } from "axios";
 
+// eslint-disable-next-line
 export function handleCatchBlock(err: any) {
     let message = '';
 

@@ -1,5 +1,3 @@
-import { RiLoaderLine } from '@remixicon/react'
-import React from 'react'
 
 const EmptyText = ({ text }: {
     text: string,

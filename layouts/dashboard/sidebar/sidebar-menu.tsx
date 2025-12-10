@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import sidebarMenuItems, { DashboardSidebarMenuItemInterface } from './menu-items'
 import Link from 'next/link'
 import { AnimatePresence, motion } from "framer-motion";
@@ -74,8 +74,6 @@ function SubmenuItemTemplate({ menu }: {
 }) {
 
     const pathname = usePathname();
-
-    const menuWrapperRef = useRef<HTMLDivElement>(null);
     const [isOpen, setIsOpen] = useState<boolean>(() => {
         let currentMenuActive = false;
         for (const submenu of menu.submenu || []) {

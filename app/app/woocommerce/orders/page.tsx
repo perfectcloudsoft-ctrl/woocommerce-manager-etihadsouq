@@ -166,12 +166,14 @@ const WoocommerceOrdersPage = () => {
             "Action",
           ]
         }
-        dataRow={orders?.map((order) => ([
+        dataRow={orders?.map((order, index) => ([
           `#${order.id}`,
           order.date_created.split('T')[0],
           OrderStatusUi({ text: order.status }),
           order.total,
-          <div>
+          <div
+            key={index}
+          >
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button

@@ -20,6 +20,10 @@ export function getWoocommerceApi() {
                 auth: {
                     username: consumerKey,
                     password: consumerSecret,
+                },
+                headers: {
+                    "User-Agent": "Mozilla/5.0",
+                    "Accept": "*/*"
                 }
             })
 

@@ -1,5 +1,6 @@
 import { handleCatchBlock } from "@/functions/error-handler";
 import { GetAllWcOrderRequestData, getAllWcOrders } from "@/woocommerce/orders/get-all";
+import { AxiosError } from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
@@ -9,8 +10,12 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json(orders);
     } catch (err) {
-        console.log("Router error")
-        console.log(err)
+        console.log("Router error");
+
+        if (err instanceof AxiosError) {
+            console.log(err.response?.data);
+        }
+
         const message = handleCatchBlock(err);
         return NextResponse.json(message, { status: 500 });
     }

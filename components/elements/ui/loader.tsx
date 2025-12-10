@@ -1,5 +1,4 @@
-import { RiLoader5Line, RiLoaderLine } from '@remixicon/react'
-import React from 'react'
+import { RiLoaderLine } from '@remixicon/react'
 
 const AnimationLoader = ({ text }: {
     text: string,

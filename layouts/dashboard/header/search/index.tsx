@@ -1,7 +1,7 @@
 'use client';
 
 import { RiSearchLine } from "@remixicon/react";
-import { KeyboardEvent, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const HeaderGlobalSearch = () => {
 

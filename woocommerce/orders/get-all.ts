@@ -12,7 +12,7 @@ export async function getAllWcOrders(options: GetAllWcOrderRequestData) {
         try {
             const woocommerceApi = await getWoocommerceApi();
 
-            let findQuery: {
+            const findQuery: {
                 [key: string]: string,
             } = {};
 

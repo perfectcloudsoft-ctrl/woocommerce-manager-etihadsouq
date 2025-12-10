@@ -18,8 +18,8 @@ export interface WcOrdersInterface {
     total_tax: string,
     customer_id: number,
     order_key: string,
-    billing: {},
-    shipping: {},
+    billing: null,
+    shipping: null,
     payment_method: string,
     payment_method_title: string,
     transaction_id: string,
@@ -41,5 +41,5 @@ export interface WcOrdersInterface {
     date_completed_gmt: string | null,
     date_paid_gmt: string | null,
     currency_symbol: 'AED',
-    _links: {}
+    _links: null
 }
